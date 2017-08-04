@@ -6,6 +6,9 @@ This plugin allows people to write `markdown` with `YAML`, then extrct the `YAML
 
 What's more, while under `--watch` mode or `webpack-dev-server`, every changes inside a pointed directory will be detected(adding, changing and deleting), and the new content will be written to a `.json` file automatically.
 
+![Img](/example/img/md.png)
+
+![Img](/example/img/json.png)
 # Install
 Yarn: 
 ```
