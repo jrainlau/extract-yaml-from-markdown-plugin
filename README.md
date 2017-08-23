@@ -12,12 +12,12 @@ What's more, while under `--watch` mode or `webpack-dev-server`, every changes i
 # Install
 Yarn: 
 ```
-yarn add extract-yaml-from-markdown-plugin.js --dev
+yarn add extract-yaml-from-markdown-plugin --dev
 ```
 
 Npm: 
 ```
-npm install extract-yaml-from-markdown-plugin.js --save-dev
+npm install extract-yaml-from-markdown-plugin --save-dev
 ```
 
 # Usage
