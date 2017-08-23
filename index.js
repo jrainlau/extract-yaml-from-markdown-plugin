@@ -44,7 +44,7 @@ function deleteYaml (path, instance) {
  * @param { Object } options plugin options
  */
 function onDevServer (options) {
-  return /webpack-dev-server/.test(options.entry[0])
+  return /webpack-dev-server/.test(JSON.stringify(options.entry))
 }
 
 class extractYamlFromMarkdownPlugin {

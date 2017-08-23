@@ -1,6 +1,6 @@
 {
   "name": "extract-yaml-from-markdown-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A webpack plugin for extracting yaml content from a markdown file automatically",
   "main": "index.js",
   "scripts": {
