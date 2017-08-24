@@ -4,7 +4,7 @@
  * @desc extract yaml information from a markdown file automatically
  */
 
-const { resolve, basename } = require('path')
+const { resolve } = require('path')
 const chokidar = require('chokidar')
 const fm = require('front-matter')
 const fs = require('fs')
@@ -19,7 +19,7 @@ const { readFileSync, writeFileSync } = require('fs')
 function extractYaml (pathArr, instance) {
   const yamlJson = JSON.parse(fs.readFileSync(instance.options.output).toString())
   pathArr.forEach((path) => {
-    const fileName = basename(path)
+    const fileName = path.split(instance.options.mdDir)[1].replace(/^\//, '')
     const rawYaml = fs.readFileSync(path).toString()
     const yaml = fm(rawYaml).attributes
     yamlJson[fileName] = yaml
@@ -33,7 +33,7 @@ function extractYaml (pathArr, instance) {
  * @param { Object } instance plugin instance
  */
 function deleteYaml (path, instance) {
-  const fileName = basename(path)
+  const fileName = path.split(instance.options.mdDir)[1].replace(/^\//, '')
   const yamlJson = JSON.parse(fs.readFileSync(instance.options.output).toString())
   delete yamlJson[fileName]
   fs.writeFileSync(instance.options.output, JSON.stringify(yamlJson, null, instance.options.format))
